@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Poslasticarnica
+namespace Poslasticarnica.Windows
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for RegisterUserControll.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class RegisterUserControll : UserControl
     {
-        public MainWindow()
+        public RegisterUserControll()
         {
             InitializeComponent();
         }
