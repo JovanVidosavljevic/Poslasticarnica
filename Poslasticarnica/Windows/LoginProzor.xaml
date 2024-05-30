@@ -16,7 +16,8 @@
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="{materialDesign:MaterialDesignFont}">
-    <Grid Background="#A74195" >
+    
+    <Grid Background="#A74195" MouseDown="PomerajLoginProzor" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="280"/>
             <ColumnDefinition Width="*"/>

@@ -27,16 +27,20 @@
 
             <StackPanel HorizontalAlignment="Center" Margin="15" >
                 <TextBox Foreground="White" Margin="0,10" materialDesign:HintAssist.Hint="Unesite Ime"
+                         x:Name="unesiteIme"
                      Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="18" Width="240" />
             <TextBox Foreground="White" Margin="0,10" materialDesign:HintAssist.Hint="Unesite Prezime"
+                        x:Name="unesitePrezime"
                      Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="18" Width="240" />
             <TextBox Foreground="White" Margin="0,10" materialDesign:HintAssist.Hint="Email"
+                        x:Name="unesiteEmail"
                      Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="18" Width="240" />
             <PasswordBox Foreground="White" Margin="0,10" materialDesign:HintAssist.Hint="Password"
+                         x:Name="unesiteLozinku"
                      Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontSize="18" Width="240" />
             
         </StackPanel>
-        <Button Width="180" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,40" Content="Potvrdite registraciju" Foreground="White"/>
+        <Button Width="180" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,40" Content="Potvrdite registraciju" Foreground="White" Click="BtnRegister"/>
     
     </Grid>
 </UserControl>

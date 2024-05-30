@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,6 +24,23 @@ namespace Poslasticarnica.Windows
         public RegisterUserControll()
         {
             InitializeComponent();
+        }
+
+        private void BtnRegister(object sender, RoutedEventArgs e)
+        {
+            if(String.IsNullOrEmpty(unesiteIme.Text) && String.IsNullOrEmpty(unesiteLozinku.Password) && String.IsNullOrEmpty(unesitePrezime.Text) && String.IsNullOrEmpty(unesiteEmail.Text))
+            {
+                MessageBox.Show("Unesite podatke!");
+            } 
+            else
+            {
+                
+                User user = new User(unesiteIme.Text,unesiteLozinku.Password,unesiteEmail.Text,unesitePrezime.Text); //Pravimo objekat USER-korisnik
+                Global.Users.Add(user); // ubacujemo korisnika u listu Users
+
+                MessageBox.Show("Korisnik uspešno unet!");
+
+            }
         }
     }
 }

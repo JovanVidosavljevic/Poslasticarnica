@@ -55,16 +55,9 @@ namespace Poslasticarnica.Windows
           
         }
 
-        private void zatvoriProzor(object sender, RoutedEventArgs e)
+        private void PomerajLoginProzor(object sender, MouseButtonEventArgs e)
         {
-            Windows.Login2 login = new Windows.Login2();
-            Windows.PocetniProzor pocetniProzor = new Windows.PocetniProzor();
-
-            if(pocetniProzor.Visibility == Visibility.Visible)
-            {
-                login.Visibility = Visibility.Collapsed;
-            }
-
+            DragMove();
         }
     }
 }
