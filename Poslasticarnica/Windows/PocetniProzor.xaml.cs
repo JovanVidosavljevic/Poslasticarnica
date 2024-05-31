@@ -23,5 +23,10 @@ namespace Poslasticarnica.Windows
         {
             InitializeComponent();
         }
+
+        private void PomerajPocetniProzor(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
     }
 }

@@ -36,9 +36,12 @@ namespace Poslasticarnica.Windows
             {
                 
                 User user = new User(unesiteIme.Text,unesiteLozinku.Password,unesiteEmail.Text,unesitePrezime.Text); //Pravimo objekat USER-korisnik
-                Global.Users.Add(user); // ubacujemo korisnika u listu Users
+                SqlDataAccess sqlDataAccess = new SqlDataAccess();
+                
 
-                MessageBox.Show("Korisnik uspešno unet!");
+                if (sqlDataAccess.SaveUser(user))
+                    MessageBox.Show("Korisnik uspešno unet!");
+                else MessageBox.Show("Greška u kreiranju!");
 
             }
         }
