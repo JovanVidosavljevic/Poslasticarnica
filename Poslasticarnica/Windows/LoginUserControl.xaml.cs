@@ -51,6 +51,16 @@ namespace Poslasticarnica.Windows
 
                 if(count == 1)
                 {
+                    User loggedInUser = new User();
+                    {
+                        Username = reader["username"].ToString(),
+                        Prezime = reader["prezime"].ToString(),
+                        Email = reader["email"].ToString(),
+                        Password = reader["password"].ToString(),
+                    };
+
+                    TrenutniKorisnik.CurrentUser = loggedInUser;
+
                     PocetniProzor pocetniProzor = new PocetniProzor();
                     pocetniProzor.Show();
 
@@ -62,7 +72,6 @@ namespace Poslasticarnica.Windows
                 }
 
             } 
-            
             catch (Exception ex) 
             {
                 MessageBox.Show(ex.Message);
