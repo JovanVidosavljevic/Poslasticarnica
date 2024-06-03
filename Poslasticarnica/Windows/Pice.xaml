@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Poslasticarnica.Windows"
              mc:Ignorable="d" 
-              Height="720" Width="1250"
+              Height="900" Width="1230"
              
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
@@ -13,8 +13,157 @@
              TextElement.FontWeight="Medium"
              TextElement.FontSize="14"
              FontFamily="{materialDesign:MaterialDesignFont}">
-    <Grid Background="Red">
+    <Grid Background="Transparent">
 
+        <Grid Grid.Column="0">
+            <WrapPanel>
+                <Button Background="Transparent"  Tag="Coca Cola" Width="100" Height="140" Margin="40" Click="Button_Coke">
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\coke.jpg" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Coca Cola" HorizontalAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent"  Tag="Coca Cola" Width="100" Height="140" Margin="40" Click="Button_Fanta" >
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\fanta.png" 
+                               Width="80" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0,0.5" />
+                        <TextBlock Text="Fanta" HorizontalAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent"  Tag="Coca Cola" Width="100" Height="140" Margin="40">
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\pepsi twist.png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Coca Cola" HorizontalAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent"  Tag="Coca Cola" Width="100" Height="140" Margin="40">
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\redbull.png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Coca Cola" HorizontalAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent"  Tag="Coca Cola" Width="100" Height="140" Margin="40">
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\sprite.png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Coca Cola" HorizontalAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent"  Tag="Coca Cola" Width="100" Height="140" Margin="40">
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\zero.png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Coca Cola" HorizontalAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent"  Tag="Coca Cola" Width="100" Height="140" Margin="40">
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\drpepper.png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Coca Cola" HorizontalAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent"  Tag="Coca Cola" Width="100" Height="140" Margin="40">
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\cdry.png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Coca Cola" HorizontalAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent"  Tag="Coca Cola" Width="100" Height="140" Margin="40">
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\highbrew.png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Coca Cola" HorizontalAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent"  Tag="Coca Cola" Width="100" Height="140" Margin="40">
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\mdew.png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Coca Cola" HorizontalAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent"  Tag="Coca Cola" Width="100" Height="140" Margin="40">
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\starbucks double.png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Coca Cola" HorizontalAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent"  Tag="Coca Cola" Width="100" Height="140" Margin="40">
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\starfrapucino.png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Coca Cola" HorizontalAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent"  Tag="Coca Cola" Width="100" Height="140" Margin="40">
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\frapucinomalina.png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Coca Cola" HorizontalAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent"  Tag="Coca Cola" Width="100" Height="140" Margin="40">
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\7upcherry.png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Coca Cola" HorizontalAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent"  Tag="Coca Cola" Width="100" Height="140" Margin="40">
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\monsterzero.png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Coca Cola" HorizontalAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent"  Tag="Coca Cola" Width="100" Height="140" Margin="40">
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\redbullSilver.png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Coca Cola" HorizontalAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent"  Tag="Coca Cola" Width="100" Height="140" Margin="40">
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\skol.png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Coca Cola" HorizontalAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent"  Tag="Coca Cola" Width="100" Height="140" Margin="40">
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\voda.png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Coca Cola" HorizontalAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+
+
+            </WrapPanel>
+        </Grid>
 
     </Grid>
 </UserControl>

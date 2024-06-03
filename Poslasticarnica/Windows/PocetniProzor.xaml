@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Poslasticarnica.Windows"
         mc:Ignorable="d"
-        Title="PocetniProzor" Height="800" Width="1600"
+        Title="PocetniProzor" Height="900" Width="1600"
         
         
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -21,11 +21,11 @@
         <Grid.RowDefinitions >
 
             <RowDefinition Height="80"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="820"/>
 
         </Grid.RowDefinitions>
 
-        
+
 
         <StackPanel Orientation="Horizontal"  Grid.Row="0" Background="#774181" >
 
@@ -44,7 +44,7 @@
 
 
 
-        <Grid Grid.Row="1" Margin="0,0,350,0" >
+        <Grid Grid.Row="1" Margin="0,0,450,0" >
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="100"/>
@@ -89,13 +89,27 @@
             <!-- ListView Menu -->
 
 
-            <Grid Grid.Row="1" Margin="10" >
-                <Grid x:Name="MenuGrid" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <!-- CentarGrid -->
+            <Grid Grid.Row="1"  >
+                <Grid x:Name="MenuGrid" HorizontalAlignment="Center" VerticalAlignment="Center"  />
             </Grid>
 
         </Grid>
-        
-        
-       
+
+        <!--Racun -->
+        <Grid HorizontalAlignment="Right" Width="450" Margin="0,0,0,0" Grid.Row="1" >
+            <DataGrid x:Name="ListaRacun" AutoGenerateColumns="True" HorizontalAlignment="Center" Width="450" Height="820" VerticalAlignment="Center">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Proizvod" Binding="{Binding Proizvod}" Width="112"/>
+                    <DataGridTextColumn Header="Cena" Binding="{Binding Cena, StringFormat='{}{0:N2} RSD'}" Width="112" />
+                    <DataGridTextColumn Header="Kol" Binding="{Binding Kolicina}" Width="112" />
+                    <DataGridTextColumn Header="Ukupno" Width="112" Binding="{Binding Cena, StringFormat='{}{0:N2} RSD'}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+            <TextBlock x:Name="UkupnoText" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="177" Height="30" Margin="0,0,26,110" FontSize="18" FontWeight="Bold"/>
+        </Grid>
+
     </Grid>
 </Window>

@@ -20,9 +20,25 @@ namespace Poslasticarnica.Windows
     /// </summary>
     public partial class Pice : UserControl
     {
+       
+        public event Action<string,string> PiceDodato;
+
         public Pice()
         {
             InitializeComponent();
+        }
+
+       
+        private void Button_Coke(object sender, RoutedEventArgs e)
+        {
+            
+            PiceDodato?.Invoke("Coca-Cola", "160 RSD");
+            
+        }
+
+        private void Button_Fanta(object sender, RoutedEventArgs e)
+        {
+            PiceDodato?.Invoke("Fanta", "160 RSD");
         }
     }
 }
