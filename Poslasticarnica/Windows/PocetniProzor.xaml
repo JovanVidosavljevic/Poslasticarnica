@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Poslasticarnica.Windows"
         mc:Ignorable="d"
-        Title="PocetniProzor" Height="450" Width="800"
+        Title="PocetniProzor" Height="800" Width="1600"
+        
         
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
@@ -15,7 +16,86 @@
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="{materialDesign:MaterialDesignFont}">
-    <Grid MouseDown="PomerajPocetniProzor">
+    <Grid MouseDown="Pomeraj" Background="#FFFFFF">
+
+        <Grid.RowDefinitions >
+
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
         
+
+        <StackPanel Orientation="Horizontal"  Grid.Row="0" Background="#774181" >
+
+            <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\logo.png" 
+                   Margin="10" Height="55" Width="55" VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+            <TextBlock Text="Hi," FontSize="24" Foreground="White"  VerticalAlignment="Center" Margin="20,0,0,0" />
+
+            <TextBlock x:Name="txtUsername" FontSize="24" Foreground="White"
+                           VerticalAlignment="Center"  FontWeight="Bold"  FontStyle="Italic" Margin="20,0"/>
+
+            <TextBlock x:Name="txtPrezime" FontSize="24" Foreground="White" FontStyle="Italic" FontWeight="Bold"
+                           VerticalAlignment="Center"/>
+
+        </StackPanel>
+
+
+
+        <Grid Grid.Row="1" Margin="0,0,350,0" >
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Background="#352961" >
+                <ListView x:Name="PocetnaMenu" Margin="20,20,0,0" Foreground="LightGray" FontSize="18" Height="100" 
+                   HorizontalAlignment="Left" VerticalAlignment="Center" Width="auto" SelectedIndex="0" SelectionChanged="MenuListView">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+
+                    <ListViewItem Height="80" Margin="0,0,20,0">
+
+                        <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                            <materialDesign:PackIcon Kind="Cake" Height="30" Width="40" HorizontalAlignment="Center" Margin="5"/>
+                            <TextBlock Text="KOLAČI" FontSize="20" Margin="5,0,0,0" Height="30"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+
+                    <ListViewItem Height="80" Margin="0,0,20,0">
+
+                        <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                            <materialDesign:PackIcon Kind="Drink" Height="30" Width="40" HorizontalAlignment="Center" Margin="5"/>
+                            <TextBlock Text="PIĆE" FontSize="20" Margin="5,0,0,0" Height="30"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem Height="80" Margin="0,0,20,0">
+
+                        <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                            <materialDesign:PackIcon Kind="Coffee" Height="30" Width="40" HorizontalAlignment="Center" Margin="5"/>
+                            <TextBlock Text="KAFE" FontSize="20" Margin="5,0,0,0" Height="30"/>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+            </Grid>
+            <!-- ListView Menu -->
+
+
+            <Grid Grid.Row="1" Margin="10" >
+                <Grid x:Name="MenuGrid" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Grid>
+
+        </Grid>
+        
+        
+       
     </Grid>
 </Window>

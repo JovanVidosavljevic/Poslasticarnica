@@ -13,6 +13,7 @@
              TextElement.FontWeight="Medium"
              TextElement.FontSize="14"
              FontFamily="{materialDesign:MaterialDesignFont}">
+    
     <Grid Background="Transparent" VerticalAlignment="Center" Height="360" Margin="0,0,0,40">
         <Rectangle Height="360" Width="400" VerticalAlignment="Center" RadiusX="10" RadiusY="10" >
             <Rectangle.Fill>

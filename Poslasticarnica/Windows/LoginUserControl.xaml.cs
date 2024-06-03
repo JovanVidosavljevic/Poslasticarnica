@@ -32,68 +32,48 @@ namespace Poslasticarnica.Windows
 
         private void btnLogin(object sender, RoutedEventArgs e)
         {
-
-            SQLiteConnection sQLiteConnection = new SQLiteConnection("Data Source=Poslasticarnica_KorisniciDB.db;Version=3"); //konekcioni string
-            //proveravamo da li je konekcija otvorena
-            if(sQLiteConnection.State == ConnectionState.Closed)
+            // Kreiramo vezu sa SQLite bazom podataka
+            using (SQLiteConnection sQLiteConnection = new SQLiteConnection("Data Source=Poslasticarnica_KorisniciDB.db;Version=3"))
+            {
                 sQLiteConnection.Open();
 
-            try
-            {
-
-                String query = "select count(1) from users where username =@unesiteIme and password =@unesiteLozinku"; //pravimo upit(query) 
-                SQLiteCommand cmd = new SQLiteCommand(query,sQLiteConnection);  //koji ce se izvrsiti na ovoj konekciji
-
-                cmd.CommandTimeout = (int)CommandType.Text;
-                cmd.Parameters.AddWithValue("@unesiteIme", unesiteIme.Text);
-                cmd.Parameters.AddWithValue("@unesiteLozinku", unesiteLozinku.Password);
-                int count = Convert.ToInt32(cmd.ExecuteScalar());
-
-                if(count == 1)
+                string query = "SELECT * FROM users WHERE username = @unesiteIme AND password = @unesiteLozinku";
+                using (SQLiteCommand cmd = new SQLiteCommand(query, sQLiteConnection))
                 {
-                    User loggedInUser = new User();
+                    cmd.Parameters.AddWithValue("@unesiteIme", unesiteIme.Text);
+                    cmd.Parameters.AddWithValue("@unesiteLozinku", unesiteLozinku.Password);
+
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
                     {
-                        Username = reader["username"].ToString(),
-                        Prezime = reader["prezime"].ToString(),
-                        Email = reader["email"].ToString(),
-                        Password = reader["password"].ToString(),
-                    };
+                        if (reader.Read())
+                        {
+                            User loggedInUser = new User
+                            {
+                                Username = reader["username"].ToString(),
+                                Prezime = reader["prezime"].ToString(),
+                                Email = reader["email"].ToString(),
+                                Password = reader["password"].ToString()
+                            };
 
-                    TrenutniKorisnik.CurrentUser = loggedInUser;
+                            // Postavljamo trenutno ulogovanog korisnika
+                            SessionManager.CurrentUser = loggedInUser;
 
-                    PocetniProzor pocetniProzor = new PocetniProzor();
-                    pocetniProzor.Show();
 
-                    var myWindow = Window.GetWindow(this);
-                    myWindow.Close();
-                } else
-                {
-                    MessageBox.Show("Podaci su pogrešni!");
+                            // Otvaramo glavni prozor aplikacije
+                            PocetniProzor pocetniProzor = new PocetniProzor();
+                            pocetniProzor.Show();
+
+                            // Zatvaramo trenutni prozor (login prozor)
+                            Window.GetWindow(this).Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Podaci su pogrešni!");
+                        }
+                    }
                 }
-
-            } 
-            catch (Exception ex) 
-            {
-                MessageBox.Show(ex.Message);
             }
-            
-            finally
-            {
-                sQLiteConnection.Close();
-            }
-                                                                                                                              
-
-        }
-
-        private bool isUserExist(string unesiteIme, string unesiteLozinku)
-        {
-            foreach(User user in Global.Users) 
-            {
-
-                if((user.Username == unesiteIme) && (user.Password == unesiteLozinku))
-                        return true;
-                return false;              
-            } return false;
         }
     }
 }
+

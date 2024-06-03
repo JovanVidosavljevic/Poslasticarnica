@@ -22,11 +22,56 @@ namespace Poslasticarnica.Windows
         public PocetniProzor()
         {
             InitializeComponent();
+            LoadUserData();
         }
 
-        private void PomerajPocetniProzor(object sender, MouseButtonEventArgs e)
+       
+
+        private void Pomeraj(object sender, MouseButtonEventArgs e)
         {
             DragMove();
+        }
+
+        private void LoadUserData()
+        {
+            MessageBox.Show($"Ime korisnika: {SessionManager.CurrentUser.Username}");
+            if (SessionManager.CurrentUser != null)
+            {
+                txtUsername.Text = SessionManager.CurrentUser.Username;
+                txtPrezime.Text = SessionManager.CurrentUser.Prezime;
+            }
+        }
+
+
+        private void MenuListView(object sender, SelectionChangedEventArgs e)
+        {
+            int index = PocetnaMenu.SelectedIndex;
+            MoveCursorMenu(index);
+
+           if(MenuGrid != null)
+            {
+                MenuGrid.Children.Clear();
+                UserControl userControl = null;
+
+                switch (index)
+                {
+                    case 0:
+                        MenuGrid.Children.Clear();
+                        MenuGrid.Children.Add(new Windows.Kolaci());
+                        break;
+                    case 1:
+                        MenuGrid.Children.Clear();
+                        MenuGrid.Children.Add(new Windows.Pice());
+                        break;
+                }
+            }
+
+
+            
+        }
+
+        private void MoveCursorMenu(int index)
+        {          
         }
     }
 }
