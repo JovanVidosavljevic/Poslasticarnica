@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace Poslasticarnica.Windows
 {
-    /// <summary>
-    /// Interaction logic for RegisterUserControll.xaml
-    /// </summary>
     public partial class RegisterUserControll : UserControl
     {
         public RegisterUserControll()

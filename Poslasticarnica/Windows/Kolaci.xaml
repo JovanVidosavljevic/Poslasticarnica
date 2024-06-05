@@ -13,7 +13,157 @@
              TextElement.FontWeight="Medium"
              TextElement.FontSize="14"
              FontFamily="{materialDesign:MaterialDesignFont}">
-    <Grid Background="Aquamarine">
-            
+    <Grid Background="Transparent">
+
+        <Grid Grid.Column="0">
+            <WrapPanel>
+                <Button BorderBrush="Transparent" Background="Transparent" Foreground="Transparent" Tag="Coca Cola" Width="100" Height="140" Margin="40" Click="Button_Click_1" >
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\cheese.png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Cake 1" HorizontalAlignment="Center" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+
+                <Button BorderBrush="Transparent" Background="Transparent"  Tag="Coca Cola" Width="100" Height="140" Margin="40" Click="Button_Click_2"  >
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\Cakes\cake1.png" 
+                               Width="80" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0,0.5" />
+                        <TextBlock Text="Cake 2" HorizontalAlignment="Center" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent" BorderBrush="Transparent"  Tag="Coca Cola" Width="100" Height="140" Margin="40" Click="Button_Click_3" >
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\Cakes\cake2.png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Cake 3" HorizontalAlignment="Center" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent" BorderBrush="Transparent" Tag="Coca Cola" Width="100" Height="140" Margin="40" Click="Button_Click_4" >
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\Cakes\cheese.png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Cake 4" HorizontalAlignment="Center" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent" BorderBrush="Transparent" Tag="Sprite" Width="100" Height="140" Margin="40" Click="Button_Click_5" >
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\Cakes\pngegg (1).png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Cake 5" HorizontalAlignment="Center" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent" BorderBrush="Transparent" Tag="Sprite" Width="100" Height="140" Margin="40" Click="Button_Click_6" >
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\Cakes\pngegg (10).png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Cake 6" HorizontalAlignment="Center" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent" BorderBrush="Transparent" Tag="Coca Cola" Width="100" Height="140" Margin="40" Click="Button_Click_7" >
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\Cakes\pngegg (11).png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Cake 7" HorizontalAlignment="Center" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent" BorderBrush="Transparent" Tag="Coca Cola" Width="100" Height="140" Margin="40" Click="Button_Click_8" >
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\Cakes\pngegg (12).png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Cake 8" HorizontalAlignment="Center" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent" BorderBrush="Transparent" Tag="Coca Cola" Width="100" Height="140" Margin="40" Click="Button_Click_9" >
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\Cakes\pngegg (13).png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Cake 9" HorizontalAlignment="Center" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent" BorderBrush="Transparent" Tag="Coca Cola" Width="100" Height="140" Margin="40" Click="Button_Click_10" >
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\Cakes\pngegg (14).png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Cake 10" HorizontalAlignment="Center" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent" BorderBrush="Transparent" Tag="Coca Cola" Width="100" Height="140" Margin="40" Click="Button_Click_11" >
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\Cakes\pngegg (2).png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Cake 11" HorizontalAlignment="Center" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent" BorderBrush="Transparent" Tag="Coca Cola" Width="100" Height="140" Margin="40" Click="Button_Click_12" >
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\Cakes\pngegg (3).png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Cake 12" HorizontalAlignment="Center" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent" BorderBrush="Transparent" Tag="Coca Cola" Width="100" Height="140" Margin="40" Click="Button_Click_13" >
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\Cakes\pngegg (4).png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Cake 13" HorizontalAlignment="Center" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent" BorderBrush="Transparent" Tag="Coca Cola" Width="100" Height="140" Margin="40" Click="Button_Click_14" >
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\Cakes\pngegg (5).png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Cake 14" HorizontalAlignment="Center" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent" BorderBrush="Transparent" Tag="Coca Cola" Width="100" Height="140" Margin="40" Click="Button_Click_15" >
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\Cakes\pngegg (6).png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Cake 15" HorizontalAlignment="Center" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent" BorderBrush="Transparent" Tag="Coca Cola" Width="100" Height="140" Margin="40" Click="Button_Click_16" >
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\Cakes\pngegg (7).png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Cake 16" HorizontalAlignment="Center" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent" BorderBrush="Transparent" Tag="Coca Cola" Width="100" Height="140" Margin="40" Click="Button_Click_17" >
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\Cakes\pngegg (8).png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Cake 17" HorizontalAlignment="Center" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="Transparent" BorderBrush="Transparent" Tag="Coca Cola" Width="100" Height="140" Margin="40" Click="Button_Click_18" >
+                    <StackPanel >
+                        <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\Cakes\pngegg (9).png" 
+                               Width="80" Height="100" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Cake 18" HorizontalAlignment="Center" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+
+
+            </WrapPanel>
+        </Grid>
+
     </Grid>
 </UserControl>
