@@ -51,7 +51,7 @@ namespace Poslasticarnica.Windows
 
         private void pocetniProzorPower(object sender, RoutedEventArgs e)
         {
-            Close();
+            Application.Current.Shutdown();
           
         }
 

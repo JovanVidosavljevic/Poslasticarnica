@@ -10,6 +10,7 @@ using System.Windows.Xps.Packaging;
 using System.Windows.Xps;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using System.Windows.Media.TextFormatting;
 
 namespace Poslasticarnica.Windows
 {
@@ -22,6 +23,10 @@ namespace Poslasticarnica.Windows
         {
             InitializeComponent();
             LoadUserData();
+
+            //za invertar
+            MenuGrid.Children.Clear();
+            //MenuGrid.Children.Add(new invertarControl());
 
             // postavljanje inicijalnog prikaza na Kolaci
             RacunStavke = new ObservableCollection<RacunStavka>();
@@ -44,30 +49,30 @@ namespace Poslasticarnica.Windows
             DodajProizvodNaRacun(nazivKolaca, cenaKolaca);
         }
 
+
+        //dodajem proizvod na racun tako sto se prvo parsira cena
         public void DodajProizvodNaRacun(string nazivProizvoda, string cenaProizvoda)
         {
-            if (decimal.TryParse(cenaProizvoda.Replace(" RSD", ""), out decimal cena))
-            {
-                var stavka = RacunStavke.FirstOrDefault(s => s.Proizvod == nazivProizvoda);
-
-                if (stavka != null)
-                {
-                    stavka.Kolicina++;
-                }
-                else
-                {
-                    RacunStavke.Add(new RacunStavka() { Proizvod = nazivProizvoda, Cena = cena, Kolicina = 1 });
-                }
-
-                ListaRacun.Items.Refresh();
-                AzurirajUkupno();
-            }
-            else
+            /*parsiramo cenu kako bi proverili da je uneti broj tacnog formata,
+            ako parsiranje ne uspe nece biti bacen izuzetak vec ce funkcija fratiti false
+            sto nam omogucava da rukujemo porukom*/
+            if (!decimal.TryParse(cenaProizvoda.Replace(" RSD", ""), out decimal cena))
             {
                 MessageBox.Show("Unesena cena nije u ispravnom formatu.", "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
             }
+            //izvrsava se pretraga liste,ako pronadje stavku uvecava kolicinu,u suprotnom dodaje je na racun
+            var stavka = RacunStavke.FirstOrDefault(s => s.Proizvod == nazivProizvoda);
+            if (stavka != null)
+                stavka.Kolicina++;
+            else
+                RacunStavke.Add(new RacunStavka { Proizvod = nazivProizvoda, Cena = cena, Kolicina = 1 });
+
+            ListaRacun.Items.Refresh();
+            AzurirajUkupno();
         }
 
+        //azuriramo ukupno
         private void AzurirajUkupno()
         {
             Ukupno = RacunStavke.Sum(stavka => stavka.Cena * stavka.Kolicina);
@@ -79,16 +84,19 @@ namespace Poslasticarnica.Windows
             DragMove();
         }
 
+        //prikazivanje trenutno ulogovanog korisnika
         private void LoadUserData()
         {
             MessageBox.Show($"Ime korisnika: {SessionManager.CurrentUser.Username}");
             if (SessionManager.CurrentUser != null)
             {
                 txtUsername.Text = SessionManager.CurrentUser.Username;
-                txtPrezime.Text = SessionManager.CurrentUser.Prezime;
+                
             }
         }
 
+
+        //switch user kontrole
         private void MenuListView(object sender, SelectionChangedEventArgs e)
         {
             int index = PocetnaMenu.SelectedIndex;
@@ -109,20 +117,30 @@ namespace Poslasticarnica.Windows
                         piceControl.PiceDodato += PiceControl_PiceDodato;
                         MenuGrid.Children.Add(piceControl);
                         break;
+                    case 2:
+                        var invertarControl = new Invertar();
+                        MenuGrid.Children.Add(invertarControl);
+                        break;
                 }
             }
         }
 
+
+
         private void MoveCursorMenu(int index)
         {
-            
+          //
         }
 
         private void PocetniProzorClose(object sender, RoutedEventArgs e)
         {
-            Close();
+            Application.Current.Shutdown();
         }
 
+
+
+
+        //naplati button
         private void Naplati_Click(object sender, RoutedEventArgs e)
         {
             // kreiranje prozora za stapanje
@@ -135,16 +153,8 @@ namespace Poslasticarnica.Windows
                 printDialog.PrintVisual(ListaRacun, "Štamparnje računa");
             }
         }
-
-      
-
-        private void UkloniSaListe_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-       
-
+    
+        //ukloni button
         private void ukloni(object sender, RoutedEventArgs e)
         {
             // provera da li postoji jedna stvar u datagridu
@@ -175,6 +185,8 @@ namespace Poslasticarnica.Windows
             }
         }
 
+        //obrisi button
+
         private void Obrisi_Click(object sender, RoutedEventArgs e)
         {
             
@@ -198,6 +210,17 @@ namespace Poslasticarnica.Windows
             {
                 MessageBox.Show("Nema stavki za brisanje.", "Upozorenje", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+        }
+
+        
+
+        private void BtnLogOut(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Hidden;
+
+            Windows.Login2 login = new Windows.Login2();
+            login.Visibility = Visibility.Visible;
+            
         }
     }
 }

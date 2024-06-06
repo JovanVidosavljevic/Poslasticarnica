@@ -17,7 +17,7 @@ internal class RacunStavka : INotifyPropertyChanged
             if (proizvod != value)
             {
                 proizvod = value;
-                OnPropertyChanged(nameof(Proizvod));
+                OnPropertyChanged();
             }
         }
     }
@@ -31,7 +31,7 @@ internal class RacunStavka : INotifyPropertyChanged
             if (cena != value)
             {
                 cena = value;
-                OnPropertyChanged(nameof(Cena));
+                OnPropertyChanged();
                 OnPropertyChanged(nameof(Ukupno));
             }
         }
@@ -46,7 +46,7 @@ internal class RacunStavka : INotifyPropertyChanged
             if (kolicina != value)
             {
                 kolicina = value;
-                OnPropertyChanged(nameof(Kolicina));
+                OnPropertyChanged();
                 OnPropertyChanged(nameof(Ukupno));
             }
         }
@@ -56,7 +56,7 @@ internal class RacunStavka : INotifyPropertyChanged
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    protected virtual void OnPropertyChanged(string propertyName)
+    protected virtual void OnPropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string propertyName = null)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }

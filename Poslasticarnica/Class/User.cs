@@ -10,12 +10,14 @@ class User
 
     public User() { }
 
-    public User(string username, string prezime, string password, string email)
+    public User(string username, string password, string email, string prezime)
     {
         Username = username;
-        Prezime = prezime;
         Password = password;
         Email = email;
+        Prezime = prezime;
+        
+        
     }
 
     public string Username { get; set; }

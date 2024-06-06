@@ -6,59 +6,54 @@
         xmlns:local="clr-namespace:Poslasticarnica.Windows"
         mc:Ignorable="d"
         Title="PocetniProzor" Height="900" Width="1600"
-        
         ResizeMode="NoResize"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
-        
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="{materialDesign:MaterialDesignFont}">
+
     <Grid MouseDown="Pomeraj" Background="#FFFFFF">
-
-        <Grid.RowDefinitions >
-
+        <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
-            <RowDefinition Height="820"/>
-
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-
-
-        <StackPanel Orientation="Horizontal"  Grid.Row="0" Background="#774181" >
-
+        <!-- Header -->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#774181">
             <Image Source="D:\Poslasticarnica\Poslasticarnica\Poslasticarnica\Res\logo.png" 
                    Margin="10" Height="55" Width="55" VerticalAlignment="Center" HorizontalAlignment="Center" />
-
-            <TextBlock Text="Hi," FontSize="24" Foreground="White"  VerticalAlignment="Center" Margin="20,0,0,0" />
-
+            <TextBlock Text="Zdravo," FontSize="24" Foreground="White" VerticalAlignment="Center" Margin="20,0,0,0" />
             <TextBlock x:Name="txtUsername" FontSize="24" Foreground="White"
-                           VerticalAlignment="Center"  FontWeight="Bold"  FontStyle="Italic" Margin="20,0"/>
-
+                       VerticalAlignment="Center" FontWeight="Bold" FontStyle="Italic" Margin="20,0" />
             <TextBlock x:Name="txtPrezime" FontSize="24" Foreground="White" FontStyle="Italic" FontWeight="Bold"
-                           VerticalAlignment="Center"/>
-
-
+                       VerticalAlignment="Center" />
         </StackPanel>
 
-
-        <Button Width="30" Height="40" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="White" HorizontalAlignment="Right" Margin="0,6,10,34" Click="PocetniProzorClose" >
+        <Button Width="30" Height="40" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="White" HorizontalAlignment="Right" Margin="0,10,10,34" Click="PocetniProzorClose">
             <materialDesign:PackIcon Kind="Power" Height="30" Width="26" HorizontalAlignment="Center"/>
         </Button>
-        
+        <Button Width="30" Height="40" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="White" HorizontalAlignment="Right" Margin="0,10,60,34" Click="BtnLogOut">
+            <materialDesign:PackIcon Kind="Logout" Height="30" Width="26" HorizontalAlignment="Center"/>
+        </Button>
 
-        <Grid Grid.Row="1" Margin="0,0,450,0" >
-
+        <!-- Main Content Area -->
+        <Grid Grid.Row="1" Margin="0,0,450,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="100"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0" Background="#352961" >
-                <ListView x:Name="PocetnaMenu" Margin="20,20,0,0" Foreground="LightGray" FontSize="18" Height="100" 
-                   HorizontalAlignment="Left" VerticalAlignment="Center" Width="auto" SelectedIndex="0" SelectionChanged="MenuListView">
+            <!-- Menu -->
+            <Grid Grid.Row="0" Background="#352961">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="111*"/>
+                    <ColumnDefinition Width="119*"/>
+                </Grid.ColumnDefinitions>
+                <ListView x:Name="PocetnaMenu" Margin="20,10,0,0" Foreground="LightGray" FontSize="18" Height="100" 
+                          HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" SelectedIndex="0" SelectionChanged="MenuListView">
                     <ListView.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal"/>
@@ -66,44 +61,38 @@
                     </ListView.ItemsPanel>
 
                     <ListViewItem Height="80" Margin="0,0,20,0">
-
                         <StackPanel Orientation="Vertical" Margin="0,0,0,0">
                             <materialDesign:PackIcon Kind="Cake" Height="30" Width="40" HorizontalAlignment="Center" Margin="5"/>
                             <TextBlock Text="KOLAČI" FontSize="20" Margin="5,0,0,0" Height="30"/>
                         </StackPanel>
                     </ListViewItem>
 
-
                     <ListViewItem Height="80" Margin="0,0,20,0">
-
                         <StackPanel Orientation="Vertical" Margin="0,0,0,0">
                             <materialDesign:PackIcon Kind="Drink" Height="30" Width="40" HorizontalAlignment="Center" Margin="5"/>
                             <TextBlock Text="PIĆE" FontSize="20" Margin="5,0,0,0" Height="30"/>
                         </StackPanel>
                     </ListViewItem>
 
+                    <!-- Dodata opcija za pregled zaliha -->
                     <ListViewItem Height="80" Margin="0,0,20,0">
-
                         <StackPanel Orientation="Vertical" Margin="0,0,0,0">
-                            <materialDesign:PackIcon Kind="Coffee" Height="30" Width="40" HorizontalAlignment="Center" Margin="5"/>
-                            <TextBlock Text="KAFE" FontSize="20" Margin="5,0,0,0" Height="30"/>
+                            <materialDesign:PackIcon Kind="Warehouse" Height="30" Width="40" HorizontalAlignment="Center" Margin="5"/>
+                            <TextBlock Text="ZALIHE" FontSize="20" Margin="5,0,0,0" Height="30"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>
             </Grid>
-            <!-- ListView Menu -->
 
-
-            <!-- CentarGrid -->
-            <Grid Grid.Row="1"  >
-                <Grid x:Name="MenuGrid" HorizontalAlignment="Center" VerticalAlignment="Center"  />
+            <!-- Main Content Area -->
+            <Grid Grid.Row="1">
+                <Grid x:Name="MenuGrid" HorizontalAlignment="Center" VerticalAlignment="Center" />
             </Grid>
-
         </Grid>
 
-        <!--Racun -->
+        <!-- Račun -->
         <Grid HorizontalAlignment="Right" Width="450" Margin="0,0,0,0" Grid.Row="1">
-            <DataGrid x:Name="ListaRacun" AutoGenerateColumns="True" HorizontalAlignment="Center" Width="450" Height="820" VerticalAlignment="Center" >
+            <DataGrid x:Name="ListaRacun" AutoGenerateColumns="True" HorizontalAlignment="Center" Width="450" Height="820" VerticalAlignment="Center">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Proizvod" Binding="{Binding Proizvod}" Width="150"/>
                     <DataGridTextColumn Header="Cena" Binding="{Binding Cena, StringFormat='{}{0:N2} RSD'}" Width="150"/>
@@ -114,10 +103,21 @@
             <TextBlock x:Name="UkupnoText" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="190" Height="30" Margin="0,0,45,110" FontSize="18" FontWeight="Bold"/>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20">
-                <Button Content="Naplati" Width="100" Height="30" Margin="10" Click="Naplati_Click"/>
-                <Button Content="Obriši" Width="100" Height="30" Margin="10" Click="Obrisi_Click"/>
-                <Button Content="Ukloni" Width="120" Height="30" Margin="10" Click="ukloni" />
+                <Button BorderBrush="Transparent" Content="Naplati" Background="Green" Foreground="White" Width="100" Height="30" Margin="10" Click="Naplati_Click"/>
+                <Button BorderBrush="Transparent" Content="Obriši" Background="Red" Foreground="White" Width="100" Height="30" Margin="10" Click="Obrisi_Click"/>
+                <Button BorderBrush="Transparent" Content="Ukloni" Background="Gray" Foreground="White" Width="120" Height="30" Margin="10" Click="ukloni"/>
             </StackPanel>
+        </Grid>
+
+        <!-- Invertar -->
+        <Grid x:Name="InventarGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed">
+            <DataGrid x:Name="ListaInventar" AutoGenerateColumns="True" HorizontalAlignment="Center" Width="1200" Height="820" VerticalAlignment="Center" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Proizvod" Binding="{Binding Proizvod}" Width="300"/>
+                    <DataGridTextColumn Header="Količina na skladištu" Binding="{Binding Kolicina}" Width="300"/>
+                    <DataGridTextColumn Header="Cena po jedinici" Binding="{Binding Cena, StringFormat='{}{0:N2} RSD'}" Width="300"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
 
     </Grid>

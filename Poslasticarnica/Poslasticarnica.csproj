@@ -14,8 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Invertar.DB">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Poslasticarnica_KorisniciDB.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Res\logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
